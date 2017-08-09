@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:vm="clr-namespace:RightPeople.ViewModels"
+             x:Class="RightPeople.Perfil" Title="Perfil" IsBusy="True">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Guardar" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <vm:PerfilViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Padding="40">
+                    
+
+                <controls:CircleImage Source="{Binding ImagenPerfil}" 
+                                              Aspect="AspectFill" HorizontalOptions="Center">
+                    <controls:CircleImage.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                  iOS="55"
+                                  Android="100"
+                                  WinPhone="75"/>
+                    </controls:CircleImage.WidthRequest>
+                    <controls:CircleImage.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                  iOS="55"
+                                  Android="100"
+                                  WinPhone="75"/>
+                    </controls:CircleImage.HeightRequest>
+                </controls:CircleImage>
+                
+                <Button Text="Tomar Foto" 
+                        BackgroundColor="#244764" 
+                        BorderRadius="0"
+                        Clicked="Button_Clicked"/>
+                <Button 
+                    Text="Foto de galeria" 
+                    BackgroundColor="#244764" 
+                    BorderRadius="0"
+                    Clicked="Button_Clicked_1"/>
+                    <Label 
+                    Text="Correo" 
+                    TextColor="Black"/>
+                    <Entry 
+                    BackgroundColor="#f1f6f0" 
+                    FontSize="Small" 
+                    Text="{Binding Correo}"/>
+                    <Label 
+                    Text="Nombre" 
+                    TextColor="Black"/>
+                <Entry 
+                    BackgroundColor="#f1f6f0" 
+                    FontSize="Small" 
+                    Text="{Binding Nombre}"/>
+                <Label 
+                    Text="Apellidos" 
+                    TextColor="Black"/>
+                <Entry 
+                    BackgroundColor="#f1f6f0" 
+                    FontSize="Small" 
+                    Text="{Binding Apellidos}"/>
+                <Label 
+                    Text="Profesion" 
+                    TextColor="Black"/>
+                <Entry 
+                    BackgroundColor="#f1f6f0" 
+                    FontSize="Small" 
+                    Text="{Binding Profesion}"/>
+                    <Label 
+                    Text="Curriculum" 
+                    TextColor="Black"/>
+                <Button 
+                    Text="Tomar Foto a CV" 
+                    BackgroundColor="#244764" 
+                    BorderRadius="0"
+                    Clicked="Button_Clicked_2"/>
+                    <Image Source="{Binding CV}"/>
+                    <Button 
+                    Text="Subir desde celular" 
+                    BackgroundColor="#244764" 
+                    BorderRadius="0"/>
+
+            </StackLayout>
+
+                <StackLayout IsVisible="{Binding Running}" Padding="12" VerticalOptions="Start"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+
+                    <ActivityIndicator IsRunning="{Binding Running}"/>
+
+                    <Label Text="" HorizontalOptions="Center" TextColor="#244764"/>
+
+                </StackLayout>
+
+            </AbsoluteLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+    

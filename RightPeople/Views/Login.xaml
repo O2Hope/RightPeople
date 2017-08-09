@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RightPeople.Login">
+
+
+    <ContentPage.Content Padding="0">
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+          
+            <Image
+                x:Name="HeroImage"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="3"
+				Source="hero.jpg"
+                Aspect="AspectFill"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions ="FillAndExpand"
+                Opacity=".5"/>
+            
+                <Label Text="Right People" 
+                       TextColor="White"  
+                       FontSize="24" FontAttributes="Bold"
+                       BackgroundColor="#244764" Grid.ColumnSpan="2" 
+                       Grid.Row="0" HorizontalOptions="Fill" HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" Opacity=".6"/>
+           
+            <Button 
+				x:Name="IniciarSesion"
+				Grid.Row="2"
+				BackgroundColor="#244764"
+				BorderRadius="0"
+				TextColor="White" 
+				Text="Iniciar Sesión"
+                Clicked="IniciarSesion_Clicked"/>
+            <Button 
+				x:Name="Registrarse"
+				Grid.Row="2"
+				Grid.Column="1"
+				BackgroundColor="#C81C33" 
+				BorderRadius="0"
+				TextColor="White"
+				Text="Registrarse"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Clicked="Registrarse_Clicked"
+                />
+    
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,2 @@
+C:\Users\agusv\Source\Repos\RightPeople\RightPeople\RightPeople.UWP\RightPeople.UWP.csproj;x86
+C:\Users\agusv\Source\Repos\RightPeople\RightPeople\RightPeople\RightPeople.csproj;neutral

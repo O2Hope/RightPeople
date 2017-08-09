@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm ="clr-namespace:RightPeople.ViewModels"
+             x:Class="RightPeople.Views.Vacantes" Title="Vacantes">
+
+    <ContentPage.BindingContext>
+        <vm:VacantesViewModel/>
+    </ContentPage.BindingContext>
+    <ListView ItemsSource="{Binding ListaEmpleos}" IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding LoadEmpleosCommand}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start"  BackgroundColor="Transparent" Padding="10,20,10,20" >
+                        <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Large" TextColor="#244764"/>
+                        <Label Text="{Binding Descripcion}" FontSize="Small"/>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

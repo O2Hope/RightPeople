@@ -1,0 +1,27 @@
+﻿{
+  "dependencies": {
+    "Microsoft.Bcl": "1.1.10",
+    "Microsoft.Bcl.Build": "1.0.21",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Rg.Plugins.Popup": "1.0.4",
+    "WindowsAzure.MobileServices": "1.3.2",
+    "Xam.Plugins.Forms.ImageCircle": "1.8.2.19-beta",
+    "Xam.Plugins.Settings": "2.6.0.12-beta",
+    "Xamarin.Auth": "1.5.0-alpha-01",
+    "Xamarin.Forms": "2.3.4.224",
+    "Xamarin.Forms.Pages": "2.3.4.224",
+    "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
+    "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

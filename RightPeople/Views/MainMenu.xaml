@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RightPeople"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="RightPeople.Views.MainMenu" >
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#244764">
+            
+
+            <ContentPage.Content >
+                <ScrollView>
+                <StackLayout  VerticalOptions="Start" Padding="0,40,0,0" Margin="0">
+
+
+                        <controls:CircleImage Source="{Binding Imageen}" 
+                                              Aspect="AspectFill" HorizontalOptions="Center">
+                            <controls:CircleImage.WidthRequest>
+                                <OnPlatform x:TypeArguments="x:Double"
+                                  iOS="55"
+                                  Android="100"
+                                  WinPhone="75"/>
+                            </controls:CircleImage.WidthRequest>
+                            <controls:CircleImage.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double"
+                                  iOS="55"
+                                  Android="100"
+                                  WinPhone="75"/>
+                            </controls:CircleImage.HeightRequest>
+                        </controls:CircleImage>
+
+                    <Label Text="{Binding Nombre}" TextColor="White" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Profesion}" TextColor="White" FontSize="Medium" FontAttributes="None" HorizontalOptions="Center" Margin="0,0,0,20"/>
+
+
+                    <ListView  x:Name="listView" 
+                               ItemsSource="{Binding Menus}" 
+                               ItemSelected="listView_ItemSelected"
+                               SeparatorColor="#C81C33" VerticalOptions="End">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="Transparent" >
+
+                                        <Image Source="{Binding Image}" Margin="20,5,0,5" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Name}" Margin="30,5,5,5" VerticalOptions="Center" HorizontalTextAlignment="Start" FontSize="Medium" TextColor="White"></Label>
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                </ScrollView>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage BarBackgroundColor="#244764">
+            <x:Arguments>
+                <local:MainMenuDetail/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
+
+
